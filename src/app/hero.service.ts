@@ -8,7 +8,6 @@ import { MessageService } from './message.service';
 })
 export class HeroService {
   list: Hero[];
-  messageService : MessageService;
   constructor(private messageService: MessageService) {
     this.list = new Array();
   }
