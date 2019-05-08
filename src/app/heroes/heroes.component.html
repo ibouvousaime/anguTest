@@ -1,2 +1,33 @@
-id = {{h.id}}
-power = {{h.power}}
+<div *ngIf="h.id != 0;else elseBlock">
+  <h1> Main Hero </h1>
+  <p> his name is {{h.name}}, his power is {{h.power}}, his id is {{h.id}} </p>
+
+  <div>
+    <h2>Edit the information of the main hero:</h2>
+    <br>
+    <label> his ID: </label>
+    <input [(ngModel)]="h.id" placeholder="id"/>
+    <br>
+    <label> his name: </label>
+    <input [(ngModel)]="h.name" placeholder="name"/>
+    <br>
+    <label> his power: </label>
+    <input [(ngModel)]="h.power" placeholder="power"/>
+  </div>
+  <h2>Other Heroes</h2>
+</div>
+
+<ng-template #elseBlock>
+  <h2>Please select a Hero</h2>
+</ng-template>
+
+<ul class="list">
+  <li *ngFor="let element of list" (click)="onSelect(element)">
+    <div *ngIf="h.id != element.id">
+    <span class="badge">ID = {{element.id}}</span>  Name =  {{element.name}} Power = {{element.power}}
+    </div>
+  </li>
+</ul>
+
+
+<button (click)="getHeroes()"> Generate more heroes </button>
