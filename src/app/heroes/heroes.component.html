@@ -1,3 +1,5 @@
+
+    <a href ='/heroes'> Start Page </a>
 <div *ngIf="h.id != 0;else elseBlock">
   <h1> Main Hero </h1>
   <p> his name is {{h.name}}, his power is {{h.power}}, his id is {{h.id}} </p>
@@ -28,6 +30,5 @@
     </div>
   </li>
 </ul>
-
 
 <button (click)="getHeroes()"> Generate more heroes </button>
