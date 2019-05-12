@@ -1,0 +1,59 @@
+<body>
+
+  <h1>Welcome to the collection manager</h1>
+
+  <h2>What do you want to do, type help if you don't know what to do</h2>  
+  <div *ngIf="choice == 'help'">
+  <ul>
+    <li> list to see the list of collection</li>
+    <li> create to create a new collection</li>
+    <li> search to search for a document</li>
+    <li> insert to send a new document</li>
+  </ul>
+  </div>
+  <label> choice: </label>
+  <input [(ngModel)]="choice"/>
+  <form>
+
+    <div *ngIf="choice == 'list'">
+
+      <p>Collections</p>
+      <li *ngFor="let element of listColl"> {{element}}
+      </li>
+    </div>
+    <div *ngIf="choice == 'create'">
+      <script>
+        var collectionName = "";
+      </script>
+      <p>Create a collection</p>
+      <label> name: </label>
+      <input [(ngModel)]="collectionName" name="collname"/>
+      <button (click)="createCollection(collectionName)">Confirm Creation</button>
+      <label id="createStatus" ></label>
+    </div>
+    <div *ngIf="choice == 'search'">
+        <script>
+            var collectionName = "";
+            var elementID = ""
+          </script>
+          <label>Collection's name:</label>
+           <input [(ngModel)]="collectionName" name="collname"/> <br>
+           <label>Document's name</label>
+           <input [(ngModel)]="elementID" name="collname"/> <br>
+           <button (click)="searchDocument(collectionName,elementID)">Search</button>
+           <label id="findResult" ></label>
+    </div>
+    <div *ngIf="choice == 'insert'">
+        <script>
+            var collectionName = "";
+            var documentContent = "";
+          </script>
+            <label>Collection: </label>
+            <input [(ngModel)]="collectionName" name="collname" id="insertdocname"/> <br>
+            <label>Document : </label>
+            <textarea [(ngModel)]= "documentContent" rows="10" cols="50" name= "doccontent" id = "documentcontent"></textarea>
+            <button (click)="insertDocument(collectionName,documentContent)">Insert</button>
+            <label id = "insertResult"></label>
+    </div>
+  </form>
+</body>
