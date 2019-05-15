@@ -8,6 +8,9 @@ import { MessagesComponent } from './messages/messages.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MongocomponentComponent } from './mongocomponent/mongocomponent.component';
 import { MongoserviceService } from './mongoservice.service';
+import { LoginComponent } from './views/login/login.component';
+import { RegisterComponent } from './views/register/register.component';
+import { HomeComponent } from './views/home/home.component';
 
 
 @NgModule({
@@ -15,7 +18,7 @@ import { MongoserviceService } from './mongoservice.service';
     AppComponent,
     HeroesComponent,
     MessagesComponent,
-    MongocomponentComponent
+    MongocomponentComponent,
   ],
   imports: [
     BrowserModule,
