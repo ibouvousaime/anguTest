@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MongoserviceService } from 'src/app/mongoservice.service';
 
 
 
@@ -9,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  constructor() { }
+  constructor(private service: MongoserviceService) { }
 
   ngOnInit() {
   }
@@ -21,5 +22,15 @@ export class RegisterComponent implements OnInit {
         console.log("fs error");
       }
     });*/
+    let name = (<HTMLInputElement>document.getElementById('name')).value;
+    let power = (<HTMLInputElement>document.getElementById('power')).value;
+    let pass = (<HTMLInputElement>document.getElementById('pass')).value;
+    console.log(JSON.stringify({n:name, p:power, pa:pass}));
+    this.service.insertDoc('value1', JSON.stringify({n:name, p:power, pa:pass})).subscribe(res => {
+      console.log(res);
+    })
+    setTimeout(function(){
+        window.location.href = '/login';
+    }, 1000);
   }
 }

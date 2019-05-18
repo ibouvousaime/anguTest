@@ -28,4 +28,10 @@ export class MongoserviceService {
   newCollection(params): Observable<any> {
     return this.http.post(this.mongobaseurl + 'new/' + params.collection,params, httpOptions)
   }
+  sendForgot(email): Observable<any> {
+    return this.http.get(this.mongobaseurl + 'sendForgot/' + email, httpOptions)
+  }
+  searchUser(user, pass): Observable<any> {
+    return this.http.post(this.mongobaseurl + 'searchUser/',{u:user,p:pass}, httpOptions)
+  }
 }
