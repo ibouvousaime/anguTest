@@ -34,4 +34,11 @@ export class MongoserviceService {
   searchUser(user, pass): Observable<any> {
     return this.http.post(this.mongobaseurl + 'searchUser/',{u:user,p:pass}, httpOptions)
   }
+  checkToken(token): Observable<any> {
+    return this.http.post(this.mongobaseurl + 'searchToken/',{tok:token}, httpOptions)
+  }
+  changePassword(email, password): Observable<any> {
+    return this.http.post(this.mongobaseurl + 'changePass/',{e: email, p: password}, httpOptions)
+  }
+  
 }

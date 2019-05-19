@@ -1,0 +1,15 @@
+
+<div *ngIf="info.data.ok;else elseBlock">
+  <p>You can now change your password for the account: 
+  email = {{info.data.d.email}}
+  </p>
+  <br>
+  <label>New password</label>
+  <input type = "password" id ="newpass"> 
+  <button (click) = 'changePass()'>Confirm</button>
+  <label id='finres'></label>
+</div>
+
+<ng-template #elseBlock>
+  <h2> Incorrect Token! </h2>
+</ng-template>

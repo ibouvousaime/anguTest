@@ -17,8 +17,8 @@ export class ForgotPassCComponent implements OnInit {
     if (this.email_regex.test(dest)) {
       var result;
       this.service.sendForgot(dest).subscribe(res => result = res);
-      document.getElementById('sendStatus').innerHTML = result + dest + ".   Redirect in 3 sec..."; 
-      /*setTimeout(function(){
+      /*document.getElementById('sendStatus').innerHTML = result + dest + ".   Redirect in 3 sec..."; 
+      setTimeout(function(){
           window.location.href = '/login';
       }, 3000);*/
     }

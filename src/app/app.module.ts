@@ -8,10 +8,7 @@ import { MessagesComponent } from './messages/messages.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MongocomponentComponent } from './mongocomponent/mongocomponent.component';
 import { MongoserviceService } from './mongoservice.service';
-import { LoginComponent } from './views/login/login.component';
-import { RegisterComponent } from './views/register/register.component';
-import { HomeComponent } from './views/home/home.component';
-import { ForgotPassCComponent } from './views/forgot-pass-c/forgot-pass-c.component';
+import { PassresetComponent } from './views/passreset/passreset.component';
 
 
 @NgModule({
@@ -19,7 +16,8 @@ import { ForgotPassCComponent } from './views/forgot-pass-c/forgot-pass-c.compon
     AppComponent,
     HeroesComponent,
     MessagesComponent,
-    MongocomponentComponent
+    MongocomponentComponent,
+    PassresetComponent
   ],
   imports: [
     BrowserModule,
